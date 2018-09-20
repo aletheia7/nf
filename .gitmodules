@@ -1,0 +1,9 @@
+[submodule "vendor/github.com/aletheia7/gogroup"]
+	path = vendor/github.com/aletheia7/gogroup
+	url = ../../git/github.com/aletheia7/gogroup.git
+[submodule "vendor/github.com/aletheia7/sd"]
+	path = vendor/github.com/aletheia7/sd
+	url = ../../git/github.com/aletheia7/sd.git
+[submodule "vendor/github.com/google/gopacket"]
+	path = vendor/github.com/google/gopacket
+	url = https://github.com/google/gopacket.git
