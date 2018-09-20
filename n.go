@@ -1,3 +1,6 @@
+// Copyright 2016 aletheia7. All rights reserved. Use of this source code is
+// governed by a BSD-2-Clause license that can be found in the LICENSE file.
+
 package main
 
 //go:generate dash -c "cd vendor/libnetfilter_queue-1.0.3 && ./configure --enable-static=yes --enable-shared=no"
