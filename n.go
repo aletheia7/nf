@@ -33,7 +33,7 @@ func New_queue(id uint16) *Queue {
 	}
 	q.queue = nfqueue.NewQueue(q.id, q,
 		&nfqueue.QueueConfig{
-			MaxPackets: 1000,
+			MaxPackets: 5000,
 			BufferSize: 16 * 1024 * 1024,
 		})
 	return q
@@ -92,7 +92,5 @@ func main() {
 	go q.Start(gg)
 	defer gg.Wait()
 	<-gg.Done()
-	if err := q.Stop(); err != nil {
-		j.Err("stop:", err)
-	}
+	q.Stop()
 }

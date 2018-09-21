@@ -122,7 +122,12 @@ func (q *Queue) Start() error {
 	if q.h = C.nfq_open(); q.h == nil {
 		return errors.New("Error in nfq_open")
 	}
-
+	if C.nfq_unbind_pf(q.h, C.AF_INET) < 0 {
+		return errors.New("error with nfq_unbind")
+	}
+	if C.nfq_bind_pf(q.h, C.AF_INET) < 0 {
+		return errors.New("error with nfq_bind")
+	}
 	// It is not possible to pass the queue as callback data due to error:
 	// runtime error: cgo argument has Go pointer to Go pointer
 	// As a result, we have to pass the queue ID and use the registry to retrieve the queue.
